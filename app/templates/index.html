@@ -1,0 +1,243 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block main %}        
+            <!-- Banner -->
+            <section id="banner" class="mt-5" >
+               <div class="container ">
+                 
+                  <div class="row">
+                     <div id="banner-text" class="col-md-12 mt-50 text-c">
+                        <div class="left-borders">
+                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >«Dana»<br>Bilim Merkezi</h5>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="row mt-100 p-0">
+                     
+                     <!-- About text --> 
+                     <div class="who_we_area col-md-4 col-sm-6 wow fadeInUp">
+                        <div class="service-1 green-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon1.png' %}">
+                           </div>
+                           <h2 class="unify">Gözýetimimiz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-teacher" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 pink-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon2.png' %}">
+                           </div>
+                           <h2 class="unify">Şahamçalarymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-classroom" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 purple-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon3.png'%}">
+                           </div>
+                           <h2 class="unify">Maksadymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about'%}#about-reward" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+
+               </div>
+            </section>
+
+         </div>
+      </div>
+
+      <!-- About Us  -->
+      <div  id="about" class="bg_gray py-70">
+         <div class="container">
+            <div class="row ">
+               <div class="who_we_area title text-left col-md-6 col-sm-6 col-4pad wow fadeInUp">
+                  <h1 class="pt-90">Biz Barada</h1>
+                  <div class="hed_img"> 
+                     <img src="{% static 'assets/image/headding-img.png' %}">
+                  </div>
+                  <p class="about-bottom-s wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">«Dana» bilim merkezi ulular we çagalar üçin dil, halkara synaglara taýýarlyk, hünär ýokarlandyryş, kompýuter, programmirleme we robot tehnologiýasy kurslaryny hödürleýär.</p>
+                  <div class="col-xs-12 top-contact wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
+                     <a type="submit" id="about_us" href="{% url 'about' %}#about-info" class="btn btn-default wow fadeInUp  js-scroll-trigger button_about_shadow" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Biz barada maglumatlar</a>
+                  </div>
+               </div>
+               <div class="who_we_area col-md-6 col-sm-6 col-4pad wow fadeInUp">
+                  <img class='about_img' src="{% static 'assets/image/image16.jpg' %}">
+               </div>
+            </div>
+         </div>
+      </div>
+    
+      <!-- Courses -->
+      <div id="courses" class=" py-70">
+         <div class="container">
+            <div class="row text-center mb-60 ">
+               <div class="title wow fadeInUp">
+                  <h1>Kurslarymyz</h1>
+                  <div class="hed_img"> 
+                     <img src="{% static 'assets/image/headding-img.png' %}">
+                  </div>
+                  <p>«Dana» bilim merkezi döwrebap bilim ulgamyna laýyk  gelýän kursalaryň <br> birnäçe görnüşini size hödürleýär</p>
+               </div>
+            </div>
+
+            <div class="row about_row  py-40">
+
+               {%for i in groups%}
+               <div class="group who_we_area col-md-4 col-sm-6 col-4pad wow fadeInUp">
+                  <div class="service-s">
+                     <div class="servise-top wow fadeInUp">
+                        <img src='/media/{{i.photo}}'>
+                     </div>
+                     <h2 class="Practice">{{i.name}}</h2>
+                     <p class="bottom-s">{{i.description}}</p>
+                     <div class="button-div">
+                        <a href="{% url 'group_spec' i.id %}" class="button-bottom">Giňişleýin</a>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+
+         </div>
+      </div>
+
+      <!-- Why Choose Us -->
+      <section class="bg_gradient_team">
+         <div class="container">
+            <div class="row text-center">
+               <div class="title wow fadeInUp">
+                  <h1>Näme üçin Biz?</h1>
+                  <div class="hed_img"> 
+                     <img src="{% static 'assets/image/headding-img.png' %}">
+                  </div>
+                  <p>Okuwçylarymyzyň bilim almagy
+                     üçin zerur bolan şertleri döretmek
+                     bilen çäklenmän, <br>eýsem-de olaryň
+                     wagtyny gyzykly geçirmegi üçin
+                     alada edilip, dürli ylmy-medeni
+                     çäreleri hem guraýarys.</p>
+               </div>
+            </div>
+          
+            <div class="row about_row">
+               <div class="divTable">
+                  <div class="divTableBody">
+                     <div class="divTableRow">
+                        <div class="divTableCell text-right col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                              <ul class="Attorneys">
+                                 <li>
+                                    <h1>Döwrebaplyk</h1>
+                                    <p>Amatly ýerlerde ýerleşýän Bilim merkezlerimizde
+                                       oňaýly okuw sagatlarymyz
+                                       we döwrebap enjamlarymyz.</p>
+                                 </li>
+                              </ul>
+   
+                              <ul class="Attorney">
+                                 <li>   
+                                    <img class='icon_first icon_choose_us' src="{% static 'assets/image/icon7.png' %}">     
+                                 </li>
+                              </ul>
+                           
+
+                           
+                              <ul class="Attorneys">
+                                 <li>
+                                    <h1>Giň Dünýä garaýyş</h1>
+                                    <p>Halkara derejeli guramalar
+                                       bilen hyzmatdaşlyk.</p>
+                                 </li>
+                              </ul>
+   
+                              <ul class="Attorney">
+                                 <li>   
+                                    <img class='icon_second icon_choose_us' src="{% static 'assets/image/icon9.png' %}">     
+                                 </li>
+                              </ul>
+                           
+
+                        </div>
+
+                        <div class="divTableCell text-right col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                           
+                              <ul class="Attorneys">
+                                 <li>
+                                    <h1>Bilim</h1>
+                                    <p>Dünýä ülňülerine kybap gelýän bilim
+                                       usulyýetlerimiz we şertlerimiz.</p>
+                                 </li>
+                              </ul>
+   
+                              <ul class="Attorney">
+                                 <li>   
+                                    <img class='icon_third icon_choose_us' src="{% static 'assets/image/icon4.png' %}">     
+                                 </li>
+                              </ul>
+                           
+                           
+                           
+                              <ul class="Attorneys">
+                                 <li>
+                                    <h1>Gyzykly çäreler</h1>
+                                    <p>Çagalaryň bilime bolan höwesini artdyrjak
+                                       her dürli çäreler, ýaryşlar we oýunlar</p>
+                                 </li>
+                              </ul>
+   
+                              <ul class="Attorney">
+                                 <li>   
+                                    <img class='icon_fourth icon_choose_us' src="{% static 'assets/image/icon10.png' %}">     
+                                 </li>
+                              </ul>
+                           </div>
+                  
+                        
+                           
+                     </div>
+                  </div>
+               </div>
+            
+           
+            </div>
+         </div>
+      </section>
+      
+      <!-- Enroll the course -->
+      <div id="enroll" class="our_partners_area bg_gradient_team">
+         <div class="book_now_aera all-text ">
+            <div class="container">
+               <div class="row book_now">
+                  <div class="col-md-7 booking_text">
+                     <h2>Tiz wagtyň içinde Kursa ýazylyň!<h2>
+                     <p>Gysga wagtyň içinde online anketa dolduryp kursa ýazylyň.</p>
+                  </div>
+                  <div class="col-md-5 p0 book_bottun">
+                     <div class="col-md-5">
+                     </div>
+                     <div class="col-md-7 col-xs-12">
+                        <div class="top-banner wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
+                           <a id="#services" href="{% url 'contact' %}#contact" class="course_enroll btn btn-primary radius-50  wow fadeInUp  js-scroll-trigger" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">Kursa ýazylmak</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+{% endblock main %}

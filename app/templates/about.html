@@ -1,0 +1,297 @@
+{% extends "main.html" %}
+{% load static %}
+{% block main %}
+         <!-- Banner -->
+            <section id="banner" class="mt-5" >
+               <div class="container ">
+                  
+                  <div class="row">
+                     <div id="banner-text" class="col-md-12 mt-50 text-c">
+                        <div class="left-borders">
+                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Biz<br>Barada</h5>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="row mt-100 p-0">
+                     
+                     <!-- About text --> 
+                     <div class="who_we_area col-md-4 col-sm-6 wow fadeInUp">
+                        <div class="service-1 green-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon1.png' %}">
+                           </div>
+                           <h2 class="unify">Gözýetimimiz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-teacher" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 pink-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon2.png' %}">
+                           </div>
+                           <h2 class="unify">Şahamçalarymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-classroom" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 purple-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon3.png'%}">
+                           </div>
+                           <h2 class="unify">Maksadymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about'%}#about-reward" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+
+               </div>
+            </section>
+
+         </div>
+      </div>
+
+      <!-- About-1 -->
+      <div  id="about-text"  class="bg_Consultation pt-70">
+         <div class="container">
+            <div class="row  ">
+               <!-- About-text --> 
+               <div class="who_we_area col-lg-12 col-md-12 col-sm-12 col-4 pad wow fadeInUp">
+                  <p class="about-bottom-s c_f  wow fadeInUp text-center" style="visibility: visible; animation-name: fadeInUp;">
+                     Bilim merkezi 2018-nji ýylda
+                     esaslandyrylyp, şu güne çenli
+                     15000-den gowrak uçuryma diňe
+                     dil we hünär ukyplaryny däl, şol bir
+                     wagtyň özünde baý tejribäni we
+                     gymmatly dostlary gazanmaga
+                     hem mümkinçilik döretdi.
+                     
+                     Bilim merkezimiz Angliýa, Russiýa ýaly döwletlerde
+                     iş alyp barýan birnäçe guramalar we
+                     <br>kompaniýalar bilen hyzmatdaşlyk edýär.
+                  </p>
+               </div>
+            </div>
+            
+            <div class="about_content row mt-50 bottom_service">
+               <div class="who_we_area title text-left p0 photo_one col-md-4 col-sm-6  wow fadeInUp">
+                  <div class="ovrllay">
+                     <div class="inner_text">
+                        <h1><a class='yellow_hover' href="#history">Taryhy Wakalarymyz</a></h1>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="who_we_area title text-left p0 photo_two col-md-4 col-sm-6 wow fadeInUp">
+                  <div class="ovrllay">
+                     <div class="inner_text">
+                        <h1><a class='yellow_hover' href="{% url 'courses' %}">Kurslarymyz</a></h1>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="who_we_area title text-left p0 photo_three col-md-4 col-sm-6 wow fadeInUp">
+                  <div class="ovrllay">
+                     <div class="inner_text">
+                        <h1><a class='yellow_hover' href="{% url 'contact' %}">Habarlaşmak</a></h1>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    
+      <!-- About Us-2 -->
+      <div  id="about"  class="bg_gradient_team py-70">
+         <div class="container">
+            <div class="row about_row  py-40"> 
+            
+            <div class="row">   
+               <div id="about-info" class="who_we_area title text-left col-md-8 col-sm-6 col-4pad wow fadeInUp">
+                  <h1>Biz barada Maglumatlar</h1>
+                  <p class="about-bottom-s wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">«Dana» bilim merkezi ulular we çagalar üçin dil, halkara synaglara taýýarlyk, hünär ýokarlandyryş, kompýuter, programmirleme we robot tehnologiýasy kurslaryny hödürleýär. </p>
+               </div>
+               <div class="who_we_area d-center col-md-4 col-sm-6 text-right col-4pad wow fadeInUp mt-100">
+                  <img class='about_images' src="{% static 'assets/image/image10.jpg' %}" class="border_img">
+               </div>
+            </div>
+            
+            <div class="row">
+               <div id="about-teacher" class="who_we_area title text-left col-md-8 col-sm-6 col-4pad wow fadeInUp ">
+                  <h1>Gözýetimimiz</h1>
+                  <p class="about-bottom-s  wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                     Tehnologiýanyň soňky ülňülerine
+                     laýyk <br> gelýän ähli derejelerde
+                     ýokary bilim hyzmatlaryny <br> berýän
+                     halkara gurama bolmak.</p>
+               </div>
+               <div class="who_we_area d-center col-md-4 col-sm-6 text-right col-4pad wow fadeInUp mt-100">
+                  <img class='about_images' src="{% static 'assets/image/image5.jpg' %}" class="border_img">
+               </div>
+            </div>
+               
+            <div class="row">
+               <div id="about-classroom" class="who_we_area title text-left col-md-8 col-sm-6 col-4pad wow fadeInUp">
+                  <h1>Şahamçalarymyz</h1>
+                  <p class="about-bottom-s wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"> «Dana» bilim merkezi
+                     häzirki wagtda <br> Aşgabat, 
+                     Türkmenabat, Gyzylarbat,
+                     Gökdepe, <br> Türkmenbaşy 
+                     we Mary şäherlerinde
+                     hereket edýär.</p>
+               </div>
+               <div class="who_we_area d-center col-md-4 col-sm-6 text-right col-4pad wow fadeInUp mt-100">
+                  <img class='about_images' src="{% static 'assets/image/image15.jpg' %}" class="border_img">
+               </div>
+            </div>
+
+            <div class="row">
+               <div id="about-reward" class="who_we_area title text-left col-md-8 col-sm-6 col-4pad wow fadeInUp">
+                  <h1>Maksadymyz</h1>
+                  <p class="about-bottom-s  wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                     Ýurdumyzyň her bir künjegindäki
+                     ýaşlarymyzyň <br> ylym-bilime bolan
+                     höwesini artdyrmak we talaba <br>
+                     laýyk döwrebap bilim bermek.
+                  </p>
+               </div>
+               <div class="who_we_area d-center col-md-4 col-sm-6 text-right col-sm-6 col-4pad wow fadeInUp mt-100">
+                  <img class='about_images' src="{% static 'assets/image/image20.jpg' %}" class="border_img">
+               </div>
+            </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- History Area -->
+      <section id='history'>
+         <div class="container">
+            <div class="row text-center  ">
+               <div class="title wow fadeInUp">
+                  <h1>Taryhy wakalarymyz</h1>
+               </div>
+            </div>
+            <div class="row mt-100">
+               <ul class="timeline">
+                  <li  class="wow fadeInUp history_content">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle" id=""></i></a>
+                     </div>
+                     <div class="timeline-panel">
+                        <div class="timeline-body">
+                           <img style='height: 450px' class='history_image' src="{% static 'assets/image/image21.jpg' %}">
+                        </div>
+                        <div class="timeline-footer">
+                           <h1>Başlangyç</h1>
+                           <p class="c_f">
+                              15 işgär bilen işe başlan bilim merkezi, häzirki
+                              wagtda baý tejribesi bolan 200-den gowrak işgäri
+                              bilen bilim hyzmatlaryny hödürleýär.
+                           </p>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="timeline-inverted wow fadeInUp">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle invert" id=""></i></a>
+                     </div>
+                     <div class="timeline-panel">
+                        <div class="timeline-body">
+                           <p class="img_left">2018</p>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="wow fadeInUp">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle" id=""></i></a>
+                     </div>
+                     <div class="timeline-panel">
+                        <div class="timeline-body">
+                           <p class="img_top">2020</p>
+                        </div>
+                        
+                     </div>
+                  </li>
+                  <li class="timeline-inverted  wow fadeInUp history_content">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle invert" id=""></i></a>
+                     </div>
+                     <div class="timeline-panel">
+                        <div class="timeline-body small_screen_1"></div>
+                        <div class="timeline-footer">
+                           <h1>Dana Türkmenabatda</h1>
+                           <p style='text-transform: none;' class="c_f">
+                              2020-nji Ýylda Türkmenabat Şäherinde «Dana» Bilim Merkeziniň Şahamçasy Açyldy. 
+                           </p>
+                        </div>
+                     </div>
+                  </li>
+
+                   <li  class="wow fadeInUp mt_560 history_content">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle" id=""></i></a>
+                     </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-body">
+                           <img class='history_image' src="{% static 'assets/image/image24.jpg' %}">
+                         
+                        </div>
+                        <div class="timeline-footer">
+                           <h1>Yzygiderlikli Ösüş</h1>
+                           <p style='text-transform: none;' class="c_f">
+                              2021-nji Ýylda Gökdepe we Gyzylarbat Şäherlerinde Şahamçalarymyz Açyldy.</p>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="timeline-inverted wow fadeInUp history_content">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle invert" id=""></i></a>
+                     </div>
+                     <div class="timeline-panel">
+                        <div class="timeline-body">
+                           <p class="img_left">2021</p>
+                        </div>
+                        
+                     </div>
+                  </li>
+
+                  <li class="wow fadeInUp">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle" id=""></i></a>
+                     </div>
+                     <div class="timeline-panel">
+                        <div class="timeline-body ">
+                           <p class="img_top">2023</p>
+                        </div>
+                        
+                     </div>
+                  </li>
+                  <li class="timeline-inverted  wow fadeInUp history_content">
+                     <div class="timeline-badge">
+                        <a><i class="fa fa-circle invert" id=""></i></a>
+                     </div>
+                     <div class="timeline-panel">
+                        <div class="timeline-body small_screen_2"></div>
+                        <div class="timeline-footer">
+                           <h1>10-njy sepgit</h1>
+                           <p style='text-transform: none;' class="c_f">
+                              2023-nji Ýylda Bolsa Türkmenistanda «Dana» Bilim Merkeziniň 10-njy Şahamçasy Açyldy.</p>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      
+
+{% endblock main %}

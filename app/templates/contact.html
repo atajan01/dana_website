@@ -1,0 +1,178 @@
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block main %}         
+            <!-- Banner -->
+            <section id="banner" class="mt-5" >
+               <div class="container ">
+                  
+                  <div class="row">
+                     <div id="banner-text" class="col-md-12 mt-50 text-c">
+                        <div class="left-borders">
+                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Biz bilen <br> Habarlaşyň</h5>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="row mt-100 p-0">
+                     
+                     <!-- About text --> 
+                     <div class="who_we_area col-md-4 col-sm-6 wow fadeInUp">
+                        <div class="service-1 green-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon1.png' %}">
+                           </div>
+                           <h2 class="unify">Gözýetimimiz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-teacher" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 pink-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon2.png' %}">
+                           </div>
+                           <h2 class="unify">Şahamçalarymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-classroom" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 purple-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon3.png'%}">
+                           </div>
+                           <h2 class="unify">Maksadymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about'%}#about-reward" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+
+               </div>
+            </section>
+
+         </div>
+      </div>
+      
+      <!-- Contact -->
+      <section id="contact">
+         <div class="container">
+            <div class="row mt-100">
+               <div class="col-lg-6">
+                  <div class="section-heading left">
+                     <h4>Biz bilen Habarlaşyň</h4>
+                  </div>
+                  <div class="contact-form-box margin-30px-top">
+                     <div class="no-margin-lr" id="success-contact-form" style="display: none;"></div>
+                     <form id="contactForm" method="post" class="contact-form" action="/save_contact/">
+                        {% csrf_token %}
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <input type="text" class="medium-input" maxlength="50" placeholder="Name*" required="required" id="name" name="name">
+                              </div>
+
+                              <div class="col-md-12">
+                                 <input type="text" class="medium-input" maxlength="50" placeholder="Surname*" required="required" id="surname" name="surname">
+                              </div>
+
+                              <div class="col-xs-12 col-sm-6 col-md-6">
+                                 <input type="tel" class="medium-input" maxlength="70" placeholder="Phone Number*" required="required" id="phone" name="phone">
+                              </div>
+
+                              <div class="col-xs-12 col-sm-6 col-md-6">
+                                 <input type="email" class="medium-input" maxlength="70" placeholder="E-mail*" required="required" id="email" name="email">
+                              </div>
+                              
+                              <div class="col-xs-12 col-sm-6 col-md-6">
+                                 <select name="courses" id="courses">
+                                    <option value="0">Select Course</option>
+                                    {% for group in groups %}
+                                       <option value='{{group.name}}'>{{group.name}}</option>
+                                    {% endfor %}
+                                 </select>
+                              </div>
+
+                              {% comment %} <div class="col-md-12"> {% endcomment %}
+                                 <textarea class="medium-textarea " rows="15" maxlength="1000" placeholder="Message*" id="message" name="message"></textarea>
+                              {% comment %} </div> {% endcomment %}
+                              <div class="col-md-12 sm-margin-30px-bottom">
+                                 <div class="top-contact wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
+                                    <button type="submit" class="btn btn-primary wow fadeInUp radius-50" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Ugrat</button>
+                                 </div>
+                              </div>
+                           </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="contact-info-box padding-30px-left sm-no-padding">
+                     <div class="row">
+                        <div class="col-12">
+                           <div class="contact-info-section">
+                              <h4>Ofis</h4>
+                              <ul class="list-style-1 no-margin-bottom">
+                                    <li>
+                                       <p><i class="fa fa-globe text-center"></i><strong>Address: </strong>Görogly köçesi 'Altyn Asyr' Harytşynaslyk Merkezi</p>
+                                    </li>
+                                    <li>
+                                       <p><i class="fa fa-phone text-center"></i><strong>Phone: </strong>(+993) 12 927717; (+993) 12 927727</p>
+                                    </li>
+                                    <li>
+                                       <p><i class="fa fa-envelope text-center"></i><strong>Email: </strong><span class="email_color_site">dana@gmail.com</span></p>
+                                    </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-12 contact-info-section">
+                           <div class="top-contact border-none no-padding-bottom no-margin-bottom">
+                              <h4>Iş wagtlary</h4>
+                              <ul class="list-style-2">
+                                 <li>- Duşenbr - Şenbe - 8:30-dan 21:30-a</li>                           
+                                 <li>- Ýekşenbe - Dynç güni</li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-12 contact-info-section">
+                           <div class="top-contact border-none no-padding-bottom no-margin-bottom">
+                              <h4>Şahamçalarymyz</h4>
+                              <ul class="list-style-2">
+                                 <!-- Koneurgenç, yene biri yok Dashoguzdan (Sabatdan bashga) -->d
+                                 <li><span style="font-size: 16px; font-weight: bold; padding-right: 10px;">Gökdepe şäheri</span>Berkararlyk köçesi, 1-nji jaý </li>
+                                 <li><span style="font-size: 16px; font-weight: bold; padding-right: 10px;">Änew şäheri</span>Ahal köçesi 29-nji jaý 2-nji gat </li>
+                                 <li><span style="font-size: 16px; font-weight: bold; padding-right: 10px;">Mary şäheri</span>Murgap ýoly köçesi, 8-nji A jaýy </li>
+                                 <li><span style="font-size: 16px; font-weight: bold; padding-right: 10px;">Türkmenabat şäheri</span>Göroglybeg Türkmen köçesi, 10-nji jaýy </li>          
+                                 <li><span style="font-size: 16px; font-weight: bold; padding-right: 10px;">Daşoguz, Şabat şäheri</span>Şabat şäheri, Türkmenbaşy şaýoly, 1-nji 'M' jaýy </li>                    
+                                 <li><span style="font-size: 16px; font-weight: bold; padding-right: 10px;">Türkmenbaşy şäheri</span>Magtymguly şaýoly, 50-nji jaý </li>
+                                 <li><span style="font-size: 16px; font-weight: bold; padding-right: 10px;">Serdar şäheri</span>Türkmenistan köçesi, 17-nji jaý </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   
+
+      <!-- Map -->
+      <section class="py_map_40">
+         <div class="container-fluid p0">
+            <div id="contatti" class="maps">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100688.68639124728!2d58.288180831815005!3d37.941608769080744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f6fff5267e504c5%3A0x4a35b994b3bb5f36!2sDana!5e0!3m2!1sen!2s!4v1688035976302!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+         </div>
+      </section>
+
+
+
+
+{% endblock main %}
