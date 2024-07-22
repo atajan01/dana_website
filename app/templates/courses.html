@@ -1,0 +1,117 @@
+{% extends "main.html" %}
+{% load static %}
+{% block main %}         
+            <!-- Banner -->
+            <section id="banner" class="mt-5" >
+               <div class="container ">
+                  
+                  <div class="row">
+                     <div id="banner-text" class="col-md-12 mt-50 text-c">
+                        <div class="left-borders">
+                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Kurslarymyz</h5>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="row mt-100 p-0">
+                     
+                     <!-- About text --> 
+                     <div class="who_we_area col-md-4 col-sm-6 wow fadeInUp">
+                        <div class="service-1 green-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon1.png' %}">
+                           </div>
+                           <h2 class="unify">Gözýetimimiz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-teacher" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 pink-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon2.png' %}">
+                           </div>
+                           <h2 class="unify">Şahamçalarymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about' %}#about-classroom" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                        <div class="service-1 purple-after">
+                           <div class="servise-top wow fadeInUp">
+                              <img src="{% static 'assets/image/icon3.png'%}">
+                           </div>
+                           <h2 class="unify">Maksadymyz</h2>
+                           <div class="button-div">
+                              <a href="{% url 'about'%}#about-reward" class="button-s">Giňişleýin</a>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+
+               </div>
+            </section>
+         </div>
+      </div>
+
+
+      <!-- Course -->
+      <div  id="courses" class=" py-70 bg_gradient_team">
+         <div class="container">
+            <div class="row text-center mb-60 ">
+               <div class="title wow fadeInUp">
+                  <h1>Kurslarymyz barada</h1>
+                  <div class="hed_img"> 
+                     <img src="{% static 'assets/image/headding-img.png' %}">
+                  </div>
+                  <p>«Dana» bilim merkezi dil, informatika, halkara synaglara taýýarlyk, <br> hünär ýokarlandyryş kurslaryny hödürleýär</p>
+               </div>
+            </div>
+
+            {% for course in courses %}
+            <div class="row about_row py-40">
+               <div class="who_we_area col-md-12 col-sm-12 col-4pad wow fadeInUp">
+                  <div class="course">
+                     <h2 class="Practice main-h2 text-left">{{course.name}}</h2>
+                     <p class="bottom-s text-left">{{course.description}}</p>
+                     <div class="button-div ">
+                        <p class="text-left main-h2">{{course.price}}TMT</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+
+
+
+      <!-- Enroll the course -->
+      <div id="enroll" class="our_partners_area bg_gradient_team">
+         <div class="book_now_aera all-text">
+            <div class="container">
+               <div class="row book_now">
+                  <div class="col-md-7 booking_text">
+                     <h2>Tiz wagtyň içinde Kursa ýazylyň!<h2>
+                     <p>Gysga wagtyň içinde online anketa dolduryp kursa ýazylyň.</p>
+                  </div>
+                  <div class="col-md-5 p0 book_bottun">
+                     <div class="col-md-5">
+                     </div>
+                     <div class="col-md-7">
+                        <div class="top-banner wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
+                           <a id="#services" href="{% url 'contact' %}#contact" class="btn btn-primary radius-50  wow fadeInUp  js-scroll-trigger" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">Kursa ýazylmak</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+{% endblock main %}

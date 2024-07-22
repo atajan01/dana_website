@@ -1,0 +1,158 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block main %}            
+            <!-- Banner -->
+            <section id="banner" class="mt-5" >
+                <div class="container ">
+                    
+                    <div class="row">
+                        <div id="banner-text" class="col-md-12 mt-50 text-c">
+                        <div class="left-borders">
+                            <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Blog</h5>
+                        </div>
+                        </div>
+                    </div>
+        
+                    <div class="row mt-100 p-0">
+                     
+                        <!-- About text --> 
+                        <div class="who_we_area col-md-4 col-sm-6 wow fadeInUp">
+                           <div class="service-1 green-after">
+                              <div class="servise-top wow fadeInUp">
+                                 <img src="{% static 'assets/image/icon1.png' %}">
+                              </div>
+                              <h2 class="unify">Gözýetimimiz</h2>
+                              <div class="button-div">
+                                 <a href="{% url 'about' %}#about-teacher" class="button-s">Giňişleýin</a>
+                              </div>
+                           </div>
+                        </div>
+   
+                        <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                           <div class="service-1 pink-after">
+                              <div class="servise-top wow fadeInUp">
+                                 <img src="{% static 'assets/image/icon2.png' %}">
+                              </div>
+                              <h2 class="unify">Şahamçalarymyz</h2>
+                              <div class="button-div">
+                                 <a href="{% url 'about' %}#about-classroom" class="button-s">Giňişleýin</a>
+                              </div>
+                           </div>
+                        </div>
+   
+                        <div class="who_we_area col-md-4 col-sm-6  wow fadeInUp">
+                           <div class="service-1 purple-after">
+                              <div class="servise-top wow fadeInUp">
+                                 <img src="{% static 'assets/image/icon3.png'%}">
+                              </div>
+                              <h2 class="unify">Maksadymyz</h2>
+                              <div class="button-div">
+                                 <a href="{% url 'about'%}#about-reward" class="button-s">Giňişleýin</a>
+                              </div>
+                           </div>
+                        </div>
+   
+                     </div>
+        
+                </div>
+            </section>
+        
+            </div>
+        </div>
+
+
+
+        <!-- Blog -->
+        <section class="blog-area ptb-140 bg-1">
+            <div class="container">
+                <div class="row ">
+                {% for blog in blogs_pagination %}
+                    <div style='margin: 0px' class="blog col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInUp pt_banner_30">
+                        <div style="width: 350px;" class="blog-wrap mb-30">
+                            <div class="blog-img">
+                                <img src="#" alt="">
+                            </div>
+                            <div class="wow fadeInUp">
+                                <div class="blog-meta">
+                                    <img src="/media/{{blog.image}}" alt="image.jpg">
+                                </div>
+                                <h3>{{blog.title}}</h3>
+                                <p>{{blog.short_desc}}</p>
+                            </div>
+                        </div>
+                    </div>                    
+                    {% endfor %}
+                </div>
+
+                <nav aria-label="Page navigation example" >
+                    <ul style="display: flex; justify-content: center;" class="pagination">    
+                        <li class="page-item">
+                            {% if blogs_pagination.has_previous %}  
+                            <span class="page-link" aria-label="Previous">
+                                <a style="color: #000;" href="?page={{ blogs_pagination.previous_page_number }}">&laquo;</a>
+                            </span>
+
+                            {% else %}    
+                            <span aria-disabled="true" class="page-link" aria-label="Previous">
+                                <a style="color: #000;" href="">&laquo;</a>
+                            </span>
+                            {% endif %}
+                        </li>
+
+                        {% for num in blogs_pagination.paginator.page_range %}
+                            {% if num == blogs_pagination.number %}
+                            <li class="page-item active">
+                                <span style="color: #000;" class="current">{{ num }}</span>
+                            </li>
+                            {% else %}
+                            <li class="page-item">    
+                                <a style="color: #000;" href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        <li class="page-item">
+                            {% if blogs_pagination.has_next %}
+                            <span class="page-link" aria-label="Next">
+                                <a style="color: #000;" href="?page={{blogs_pagination.next_page_number}}">&raquo;</a>
+                            </span>
+
+                            {% else %}    
+                            <span aria-disabled="true" class="page-link" aria-label="Next">
+                                <a style="color: #000;" href="">&raquo;</a>
+                            </span>
+                            {% endif %}
+                        </li>
+                    </ul>                    
+                </nav>
+            </div>
+        </section>
+
+        <!-- Enroll the course -->
+        <div id="enroll" class="our_partners_area bg_gradient_team">
+            <div class="book_now_aera all-text">
+            <div class="container">
+                <div class="row book_now">
+                    <div class="col-md-7 booking_text">
+                        <h2>Tiz wagtyň içinde Kursa ýazylyň!<h2>
+                        <p>Gysga wagtyň içinde online anketa dolduryp kursa ýazylyň.</p>
+                    </div>
+                    <div class="col-md-5 p0 book_bottun">
+                        <div class="col-md-5">
+                        </div>
+                        <div class="col-md-7">
+                        <div class="top-banner wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
+                            <a id="#services" href="{% url 'contact' %}#contact" class="btn btn-primary radius-50  wow fadeInUp  js-scroll-trigger" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">Kursa ýazylmak</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+{% endblock main %}
+
+
